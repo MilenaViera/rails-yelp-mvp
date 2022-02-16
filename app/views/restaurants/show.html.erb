@@ -1,0 +1,15 @@
+<div class = "container" >
+<h1><%=@restaurant.name%></h1>
+<ul>
+  <li><%= @restaurant.address %></li>
+   <li><%= @restaurant.category %></li>
+</ul>
+<%= link_to "Regreso a la lista", restaurants_path %> <br>
+<%= link_to "Review", new_restaurant_review_path(@restaurant) %> <br>
+<%= link_to "Agregar un restaurante", new_restaurant_path %> <br>
+<div>
+
+<ul> <% @restaurant.reviews.each do |r| %>
+<li> <%= r.content %> <%= r.rating %></li>
+<%end %>
+</ul>
